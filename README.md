@@ -1,15 +1,13 @@
-# ResAgent v0.3
+# ✈️ ResAgent v0.4
 
-Första riktiga webbprototypen för ResAgent.
+Första versionen där destinationen är helt fri.
 
-## Test
-Öppna `index.html` lokalt eller publicera projektet på valfri statisk webbhosting.
-
-## Viktigt
-Den här versionen använder simulerade reseuppgifter. Den gör inga riktiga bokningar och använder inga externa API:er.
+## Nytt
+- Kunden kan skriva vilken plats på jorden som helst.
+- ResAgent försöker tolka destination och reseönskemål.
+- Exempel för Kina/Kinesiska muren och Florida.
+- Övriga destinationer får dynamiska prototypförslag.
+- Fortfarande simulerad data – inga riktiga bokningar eller externa API:er.
 
 ## Nästa steg
-1. Riktig AI-agent
-2. Live-data för flyg, hotell och hyrbil
-3. Verifiering av tillgänglighet och one-way
-4. Kostnadsmodell och betalning
+Koppla på riktig AI-analys och aktuella rese-, flyg- och boendedata.

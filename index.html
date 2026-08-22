@@ -1,86 +1,53 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#122033">
-  <title>ResAgent – din AI-reseagent</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResAgent v0.4</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top"><div class="brand">✈️ ResAgent</div><span>v0.3</span></header>
-<main>
-<section id="start" class="screen">
-  <p class="eyebrow">DIN PERSONLIGA AI-RESEAGENT</p>
-  <h1>Berätta vad du drömmer om.</h1>
-  <p class="lead">Skriv resan med dina egna ord. ResAgent analyserar önskemål, budget och kompromisser.</p>
-  <div class="panel">
-    <textarea id="request">Vi vill åka till Florida över jul. Vi är 3 vuxna och 2 barn. Vi vill ha sol och bad, gärna Disney, och har ungefär 60 000 kr totalt.</textarea>
-    <div class="fields">
-      <label>Från <input id="from" type="date" value="2026-12-12"></label>
-      <label>Till <input id="to" type="date" value="2026-12-25"></label>
-    </div>
-    <label>Prioriteringar</label>
-    <div class="chips">
-      <button class="chip active">☀️ Sol & bad</button>
-      <button class="chip active">👨‍👩‍👧‍👦 Familj</button>
-      <button class="chip active">💰 Budget</button>
-      <button class="chip">🏨 Boende</button>
-      <button class="chip">✈️ Kort restid</button>
-    </div>
-    <button id="startBtn" class="primary">🧠 Starta ResAgent</button>
-    <small>v0.3 använder simulerade reseuppgifter. Inga bokningar görs.</small>
-  </div>
+<header class="topbar"><div class="brand">✈️ <span>ResAgent</span></div><div class="version">v0.4</div></header>
+<main class="container">
+<section class="hero">
+<div class="eyebrow">DIN PERSONLIGA AI-RESEAGENT</div>
+<h1>Vart drömmer du om att åka?</h1>
+<p>Beskriv resan med dina egna ord. ResAgent försöker förstå destination, önskemål, budget och kompromisser.</p>
 </section>
 
-<section id="work" class="screen hidden">
-  <div class="panel">
-    <div class="agentHead"><div class="orb">✦</div><div><h2>Jag arbetar med resan</h2><p>Analyserar dina krav och jämför alternativ.</p></div></div>
-    <div id="worklog"></div>
-  </div>
+<section class="card form-card">
+<label for="dream">Berätta om resan</label>
+<textarea id="dream" placeholder="Exempel: Vi vill åka till Kina och se Kinesiska muren. Vi är 2 vuxna och 1 barn, gillar kultur och god mat och har cirka 45 000 kr."></textarea>
+
+<label for="destination">Destination <span class="muted">(valfritt – skriv precis vad du vill)</span></label>
+<input id="destination" placeholder="T.ex. Kina, Kinesiska muren, Tokyo, Lofoten eller 'någonstans varmt'">
+
+<div class="grid">
+<div><label for="fromDate">Från</label><input id="fromDate" type="date"></div>
+<div><label for="toDate">Till</label><input id="toDate" type="date"></div>
+</div>
+
+<label>Vad är viktigast?</label>
+<div class="chips">
+<button class="chip active" data-value="sol">☀️ Sol & bad</button>
+<button class="chip" data-value="familj">👨‍👩‍👧‍👦 Familj</button>
+<button class="chip" data-value="budget">💰 Budget</button>
+<button class="chip" data-value="kultur">🏛️ Kultur</button>
+<button class="chip" data-value="aventyr">🏔️ Äventyr</button>
+<button class="chip" data-value="mat">🍜 Mat</button>
+<button class="chip" data-value="upplevelser">🎢 Upplevelser</button>
+<button class="chip" data-value="kort">✈️ Kort restid</button>
+</div>
+
+<button id="startBtn" class="primary">🧠 Starta ResAgent</button>
+<div class="note">V0.4 använder simulerad reseanalys – inga riktiga bokningar görs.</div>
 </section>
 
-<section id="results" class="screen hidden">
-  <p class="eyebrow">ANALYS KLAR</p>
-  <h1>Jag hittade tre sätt att göra resan.</h1>
-  <div class="cards">
-    <article class="result best">
-      <div class="tag">🥇 BÄSTA MATCHNING · 91/100</div>
-      <h2>Orlando → Fort Myers Beach</h2><strong>58 740 kr</strong><p>Disney först, sedan strand. One-way hyrbil.</p>
-      <button class="secondary details" data-plan="Bästa matchningen">Visa hela resan</button>
-    </article>
-    <article class="result">
-      <div class="tag">🥈 BILLIGAST · 87/100</div>
-      <h2>Clearwater Beach</h2><strong>54 200 kr</strong><p>Mer strand per krona, mindre Disney-fokus.</p>
-      <button class="secondary details" data-plan="Billigaste alternativet">Jämför</button>
-    </article>
-    <article class="result">
-      <div class="tag">🥉 MEST UPPLEVELSER · 85/100</div>
-      <h2>Orlando + Fort Myers</h2><strong>59 800 kr</strong><p>Mer Disney och aktiviteter, mindre ren strandtid.</p>
-      <button class="secondary details" data-plan="Mest upplevelser">Jämför</button>
-    </article>
-  </div>
-  <div class="panel">
-    <h2>💬 Ändra resan</h2>
-    <p>Du ska inte behöva börja om bara för att något ändras.</p>
-    <div class="chat"><input id="change" placeholder="Ex: Vi vill ha 3 dagar Disney"><button id="changeBtn" class="primary">Ändra</button></div>
-    <p id="reply" class="muted"></p>
-  </div>
-</section>
-
-<section id="detail" class="screen hidden">
-  <div class="panel">
-    <div class="tag">🥇 VALD RESA</div><h1>Orlando → Fort Myers Beach</h1>
-    <p>12–25 december 2026 · 3 vuxna + 2 barn</p><strong class="big">58 740 kr</strong>
-    <div class="timeline">
-      <div><b>12 dec · ✈️ Orlando</b><br>Ankomst och hotell.</div>
-      <div><b>13–14 dec · 🏰 Disney</b><br>Två dagar med Disney.</div>
-      <div><b>15 dec · 🚗 Fort Myers</b><br>Hämta bil och kör söderut.</div>
-      <div><b>15–24 dec · 🏖️ Strand</b><br>Pool, strand och utflykter.</div>
-      <div><b>25 dec · ✈️ Hem</b><br>Hemresa.</div>
-    </div>
-    <button id="backBtn" class="secondary">← Tillbaka</button>
-  </div>
+<section id="results" class="results hidden">
+<div class="eyebrow">ANALYS KLAR</div>
+<h2 id="resultTitle">Jag har hittat några sätt att göra resan.</h2>
+<p id="analysisText" class="analysis"></p>
+<div id="cards"></div>
 </section>
 </main>
 <script src="app.js"></script>
