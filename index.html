@@ -1,55 +1,8 @@
-<!doctype html>
-<html lang="sv">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ResAgent v0.4</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="topbar"><div class="brand">✈️ <span>ResAgent</span></div><div class="version">v0.4</div></header>
-<main class="container">
-<section class="hero">
-<div class="eyebrow">DIN PERSONLIGA AI-RESEAGENT</div>
-<h1>Vart drömmer du om att åka?</h1>
-<p>Beskriv resan med dina egna ord. ResAgent försöker förstå destination, önskemål, budget och kompromisser.</p>
-</section>
-
-<section class="card form-card">
-<label for="dream">Berätta om resan</label>
-<textarea id="dream" placeholder="Exempel: Vi vill åka till Kina och se Kinesiska muren. Vi är 2 vuxna och 1 barn, gillar kultur och god mat och har cirka 45 000 kr."></textarea>
-
-<label for="destination">Destination <span class="muted">(valfritt – skriv precis vad du vill)</span></label>
-<input id="destination" placeholder="T.ex. Kina, Kinesiska muren, Tokyo, Lofoten eller 'någonstans varmt'">
-
-<div class="grid">
-<div><label for="fromDate">Från</label><input id="fromDate" type="date"></div>
-<div><label for="toDate">Till</label><input id="toDate" type="date"></div>
-</div>
-
-<label>Vad är viktigast?</label>
-<div class="chips">
-<button class="chip active" data-value="sol">☀️ Sol & bad</button>
-<button class="chip" data-value="familj">👨‍👩‍👧‍👦 Familj</button>
-<button class="chip" data-value="budget">💰 Budget</button>
-<button class="chip" data-value="kultur">🏛️ Kultur</button>
-<button class="chip" data-value="aventyr">🏔️ Äventyr</button>
-<button class="chip" data-value="mat">🍜 Mat</button>
-<button class="chip" data-value="upplevelser">🎢 Upplevelser</button>
-<button class="chip" data-value="kort">✈️ Kort restid</button>
-</div>
-
-<button id="startBtn" class="primary">🧠 Starta ResAgent</button>
-<div class="note">V0.4 använder simulerad reseanalys – inga riktiga bokningar görs.</div>
-</section>
-
-<section id="results" class="results hidden">
-<div class="eyebrow">ANALYS KLAR</div>
-<h2 id="resultTitle">Jag har hittat några sätt att göra resan.</h2>
-<p id="analysisText" class="analysis"></p>
-<div id="cards"></div>
-</section>
-</main>
-<script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ResAgent v0.5</title><link rel="stylesheet" href="style.css"></head><body>
+<header><b>✈️ ResAgent</b><span>v0.5</span></header><main>
+<section class="hero"><small>DIN PERSONLIGA AI-RESEAGENT</small><h1>Berätta vad du drömmer om.</h1><p>Skriv med dina egna ord. ResAgent väger ihop resmål, datum, budget och det som är viktigast för dig.</p></section>
+<section class="card"><label>Vad vill ni göra?</label><textarea id="dream">Vi vill resa någonstans där vi kan bada, äta gott och göra roliga saker med barnen.</textarea>
+<div class="grid"><div><label>Resmål</label><input id="destination" placeholder="T.ex. Kina, Tokyo, Alperna eller Florida"></div><div><label>Total budget</label><input id="budget" type="number" value="60000"></div><div><label>Från</label><input id="from" type="date" value="2026-12-12"></div><div><label>Till</label><input id="to" type="date" value="2026-12-25"></div><div><label>Vuxna</label><input id="adults" type="number" value="3" min="1"></div><div><label>Barn</label><input id="children" type="number" value="2" min="0"></div></div>
+<label>Prioriteringar</label><div id="chips" class="chips"><button class="on">☀️ Sol & bad</button><button class="on">👨‍👩‍👧‍👦 Familj</button><button class="on">💰 Budget</button><button>🏛️ Kultur</button><button>🍜 Mat</button><button>🧭 Äventyr</button><button>✈️ Kort restid</button></div>
+<button id="go" class="primary">🧠 Starta ResAgent</button><p class="note">Prototyp v0.5 använder simulerade reseuppgifter.</p></section>
+<section id="results" class="hidden"><small>ANALYS KLAR</small><h2>Jag hittade tre sätt att göra resan.</h2><div id="list"></div></section></main><footer>ResAgent v0.5 · Prototyp · Inga riktiga bokningar</footer><script src="app.js"></script></body></html>
