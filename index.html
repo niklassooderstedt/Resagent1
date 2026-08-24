@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061b31">
+<title>DestyPoint v2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="contour contour-a"></div>
+  <div class="contour contour-b"></div>
+  <div class="contour contour-c"></div>
+
+  <main class="home">
+    <header class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="43"></circle>
+          <circle cx="60" cy="60" r="31"></circle>
+          <path d="M60 4v21M60 95v21M4 60h21M95 60h21"></path>
+          <path class="plane" d="M42 67L82 43 66 77 58 61 42 67Z"></path>
+          <path class="plane-line" d="M58 61l11-9"></path>
+        </svg>
+      </div>
+      <div class="brand-name">DestyPoint</div>
+      <div class="brand-tagline">Din AI-baserade resebyrå</div>
+    </header>
+
+    <section class="travel-prompt" aria-label="Beskriv din resa">
+      <div class="prompt-icon" aria-hidden="true">
+        <svg viewBox="0 0 40 40">
+          <path d="M20 36s11-10.7 11-20A11 11 0 1 0 9 16c0 9.3 11 20 11 20Z"></path>
+          <circle cx="20" cy="16" r="3.5"></circle>
+        </svg>
+      </div>
+      <div class="prompt-copy">
+        <input id="destination" autocomplete="off" placeholder="Beskriv din resa..." aria-label="Beskriv din resa">
+        <div class="prompt-example">t.ex. destination, personer, hotell, transport</div>
+      </div>
+      <button id="spark" class="spark" type="button" aria-label="Skapa resa">✦</button>
+    </section>
+
+    <section class="date-row" aria-label="Resedatum">
+      <label class="date-field">
+        <span>Från</span>
+        <div class="date-control">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M7 3v4M17 3v4M3 10h18"></path></svg>
+          <input id="from" type="date" aria-label="Från">
+        </div>
+      </label>
+      <label class="date-field">
+        <span>Till</span>
+        <div class="date-control">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M7 3v4M17 3v4M3 10h18"></path></svg>
+          <input id="to" type="date" aria-label="Till">
+        </div>
+      </label>
+    </section>
+
+    <button id="createTrip" class="create-trip" type="button">
+      <span>Skapa min resa</span><b>✦</b>
+    </button>
+
+    <section class="inspiration" aria-label="Inspiration">
+      <div class="section-heading">
+        <span></span><h2>ELLER HÄMTA INSPIRATION</h2><span></span>
+      </div>
+
+      <div class="inspiration-grid">
+        <button class="idea" data-idea="En weekendresa för 2 personer med hotell och trevliga upplevelser.">
+          <svg viewBox="0 0 80 80" class="idea-icon"><path d="M18 31h44v30H18zM25 31V23h30v8M31 41h18M27 51h26"></path><path d="M27 61v7M53 61v7"></path></svg>
+          <span>Weekend</span>
+        </button>
+        <button class="idea" data-idea="En roadtrip för 2 personer med fina stopp, bra mat och upplevelser längs vägen.">
+          <svg viewBox="0 0 80 80" class="idea-icon"><path d="M16 51l7-24h34l7 24v9H16zM23 27l5-10h24l5 10M25 51h30M25 60v7M55 60v7"></path><circle cx="25" cy="51" r="4"></circle><circle cx="55" cy="51" r="4"></circle></svg>
+          <span>Roadtrip</span>
+        </button>
+        <button class="idea" data-idea="En resa för 2 personer med sol, bad, god mat och avkoppling.">
+          <svg viewBox="0 0 80 80" class="idea-icon"><circle cx="40" cy="30" r="12"></circle><path d="M40 9v8M40 43v8M19 30h8M53 30h8M25 15l6 6M49 39l6 6M55 15l-6 6M31 39l-6 6M12 57h56M20 64h40M19 52c7-4 14-4 21 0 7 4 14 4 21 0"></path></svg>
+          <span>Sol &amp; bad</span>
+        </button>
+        <button class="idea" data-idea="En natur- och äventyrsresa för 2 personer med vandring och fina naturupplevelser.">
+          <svg viewBox="0 0 80 80" class="idea-icon"><path d="M10 64L34 25l12 19 7-11 17 31H10Z"></path><path d="M47 64l11-22 12 22M25 64l8-13 8 13"></path></svg>
+          <span>Natur &amp; äventyr</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="destination-art" aria-hidden="true">
+      <svg viewBox="0 0 1000 210" preserveAspectRatio="none">
+        <path class="art-line" d="M0 158 C90 128 125 130 195 158 S325 180 390 150 S520 135 585 158 S720 180 810 151 S910 130 1000 150"></path>
+        <path class="art-line" d="M92 159c12-28 38-42 61-42 23 0 44 14 57 42M118 159c8-17 23-26 36-26 15 0 28 9 36 26"></path>
+        <path class="art-line" d="M760 160c12-31 32-50 47-65 13 17 22 38 25 65M778 116c-13-17-27-24-40-24M794 108c15-18 29-25 43-25"></path>
+        <path class="art-line plane-path" d="M385 118 C418 87 444 96 470 113"></path>
+        <path class="art-plane" d="M465 111l36-23-14 28-13-4-8 11z"></path>
+        <path class="art-line" d="M0 173H1000"></path>
+      </svg>
+    </section>
+
+    <section id="out" class="results" aria-live="polite"></section>
+    <div class="version">DestyPoint v2.0</div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
