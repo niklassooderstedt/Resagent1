@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#061a30">
+  <title>DestyPoint v1.6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div class="contours" aria-hidden="true"></div>
+      <div class="brand">
+        <div class="compass" aria-hidden="true"><span>✈</span></div>
+        <div class="brand-name">DestyPoint</div>
+        <div class="tagline">Din AI-baserade resebyrå</div>
+      </div>
+
+      <div class="intro">
+        <div class="eyebrow">BÖRJA HÄR</div>
+        <h1>Berätta vart du vill.</h1>
+        <p>Din resa börjar med några egna ord.</p>
+      </div>
+
+      <form id="tripForm" class="trip-box">
+        <label for="destination">🌍 <span>Beskriv din resa</span></label>
+        <div class="prompt-row">
+          <textarea id="destination" rows="2" placeholder="Exempel: Helsingborg, 2 personer, hotell och tåg från Flen. Gärna något trevligt att göra."></textarea>
+          <button id="go" class="spark" type="submit" aria-label="Skapa resa">✦</button>
+        </div>
+        <div class="date-grid">
+          <label class="date-field"><span>Från</span><input id="from" type="date"></label>
+          <label class="date-field"><span>Till</span><input id="to" type="date"></label>
+        </div>
+      </form>
+
+      <div class="inspiration-title"><i></i><span>ELLER HÄMTA INSPIRATION</span><i></i></div>
+      <div class="inspiration-grid">
+        <button class="inspiration" data-prompt="En weekend för 2 personer. Jag vill ha ett fint hotell och mysiga saker att göra."><span class="icon">▣</span><span>Weekend</span></button>
+        <button class="inspiration" data-prompt="En roadtrip för 2 personer med fina stopp, bra mat och upplevelser."><span class="icon">▱</span><span>Roadtrip</span></button>
+        <button class="inspiration" data-prompt="En resa med sol och bad, fint boende och avkoppling."><span class="icon">♨</span><span>Sol &amp; bad</span></button>
+        <button class="inspiration" data-prompt="Natur och äventyr med fina vandringar, naturupplevelser och bra boende."><span class="icon">△</span><span>Natur &amp; äventyr</span></button>
+      </div>
+
+      <div class="landscape" aria-hidden="true">
+        <span class="sun"></span><span class="plane">✈</span><span class="mountain"></span><span class="palm">♧</span>
+      </div>
+    </section>
+
+    <section id="out" class="results" aria-live="polite"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
