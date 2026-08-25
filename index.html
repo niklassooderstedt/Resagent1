@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061b31">
+  <title>DestyPoint v2.1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="brand">
+      <div class="compass" aria-hidden="true">
+        <span class="tick top"></span><span class="tick right"></span>
+        <span class="tick bottom"></span><span class="tick left"></span>
+        <span class="ring"></span><span class="needle"></span>
+      </div>
+      <h1>DestyPoint</h1>
+      <p>Din AI-baserade resebyrå</p>
+    </header>
+
+    <section class="planner" aria-label="Skapa resa">
+      <div class="trip-input">
+        <div class="pin" aria-hidden="true"></div>
+        <div class="input-copy">
+          <div class="placeholder">Beskriv din resa...</div>
+          <div class="hint">t.ex. destination, personer, hotell, transport</div>
+        </div>
+      </div>
+
+      <div class="dates">
+        <label>
+          <span>Från</span>
+          <div class="date-box"><span class="calendar"></span><input id="fromDate" type="date" value="2026-08-24"></div>
+        </label>
+        <label>
+          <span>Till</span>
+          <div class="date-box"><span class="calendar"></span><input id="toDate" type="date" value="2026-08-24"></div>
+        </label>
+      </div>
+
+      <button class="create" id="createBtn">Skapa min resa <span>✦</span></button>
+    </section>
+
+    <section class="inspiration">
+      <div class="section-title"><i></i><span>ELLER HÄMTA INSPIRATION</span><i></i></div>
+      <div class="cards">
+        <button class="card" data-prompt="En weekendresa"><span class="icon suitcase"></span><span>Weekend</span></button>
+        <button class="card" data-prompt="En roadtrip"><span class="icon car"></span><span>Roadtrip</span></button>
+        <button class="card" data-prompt="Sol & bad"><span class="icon sun"></span><span>Sol &amp; bad</span></button>
+        <button class="card" data-prompt="Natur & äventyr"><span class="icon mountains"></span><span>Natur &amp; äventyr</span></button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="landscape" aria-hidden="true"><span class="plane">➤</span></div>
+      <div>DestyPoint v2.1</div>
+    </footer>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
