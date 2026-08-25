@@ -1,0 +1,75 @@
+*{box-sizing:border-box}
+:root{
+  --navy:#061b31;
+  --navy-2:#08243d;
+  --gold:#f4bd54;
+  --gold-2:#ffd979;
+  --white:#f8f8f7;
+  --muted:#aeb9c8;
+  --blue-line:#25567f;
+  --shadow:rgba(0,0,0,.28);
+}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px;background:#020f1d;color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+button,input{font:inherit}button{cursor:pointer}
+.app-shell{width:100%;max-width:760px;margin:0 auto;background:var(--navy);min-height:100vh}
+.hero{position:relative;overflow:hidden;min-height:100vh;padding:34px 43px 22px;background:radial-gradient(circle at 50% 0%,rgba(22,68,104,.28),transparent 34%),linear-gradient(180deg,#08233d 0%,#061b31 62%,#06192d 100%)}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.3;background:linear-gradient(75deg,transparent 0 23%,rgba(55,100,136,.18) 23.2%,transparent 23.8%),linear-gradient(112deg,transparent 0 66%,rgba(55,100,136,.12) 66.2%,transparent 66.8%)}
+.topo{position:absolute;width:310px;height:230px;opacity:.34;pointer-events:none}.topo:before,.topo:after{content:"";position:absolute;inset:0;border:1px solid rgba(94,138,170,.28);border-radius:46% 54% 50% 50%;transform:rotate(-18deg)}.topo:after{inset:25px -10px 18px 25px;transform:rotate(-18deg)}.topo-left{left:-150px;top:-90px}.topo-right{right:-160px;top:-65px}
+.route-top{position:absolute;right:64px;top:-3px;width:112px;height:192px;border-right:1.5px dashed rgba(244,189,84,.68);border-bottom:1.5px dashed rgba(244,189,84,.68);border-radius:0 100px 70px 0;transform:rotate(7deg);opacity:.72}
+.brand-mark{width:120px;height:120px;margin:0 auto 1px;position:relative;z-index:1}.brand-mark svg{width:100%;height:100%}.gold-stroke{fill:none;stroke:var(--gold);stroke-width:3}.gold-fill{fill:var(--gold)}
+h1{position:relative;z-index:1;margin:0;text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:clamp(60px,11.6vw,82px);line-height:.93;letter-spacing:-4px;font-weight:500;color:#fbfaf8}
+.tagline{position:relative;z-index:1;margin:23px 0 44px;text-align:center;color:var(--gold-2);font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(21px,4.2vw,29px)}
+.planner{position:relative;z-index:1}.description-field{min-height:146px;border:2px solid var(--gold);border-radius:31px;display:flex;align-items:center;gap:22px;padding:22px 29px;background:rgba(4,29,50,.72);box-shadow:0 12px 26px rgba(0,0,0,.08)}
+.location-icon{color:var(--gold);width:58px;min-width:58px;height:68px;display:grid;place-items:center}.location-icon svg{width:50px;height:58px}.description-copy{min-width:0;flex:1}.description-copy input{width:100%;border:0;outline:0;background:transparent;color:var(--white);font-size:clamp(25px,4.9vw,31px);font-weight:400;padding:0}.description-copy input::placeholder{color:#b6bdc8;opacity:1}.description-copy span{display:block;color:#aeb7c4;font-size:clamp(16px,3.0vw,19px);margin-top:12px;white-space:nowrap;overflow:hidden;text-overflow:clip}
+.date-row{display:grid;grid-template-columns:1fr 1fr;gap:19px;margin-top:25px}.date-group>label{display:block;font-size:22px;font-weight:700;color:#f4f5f5;margin:0 0 10px 8px}.date-field{height:120px;border:1.8px solid var(--blue-line);border-radius:29px;background:rgba(5,30,51,.58);display:flex;align-items:center;padding:0 27px;gap:15px}.date-field svg{width:42px;height:42px;color:var(--gold);flex:none}.date-field input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#f4f5f5;font-size:clamp(17px,3.3vw,23px)}.date-field input::-webkit-calendar-picker-indicator{filter:invert(78%) sepia(64%) saturate(500%);opacity:.9}
+.primary{width:100%;height:111px;border:0;border-radius:31px;margin-top:34px;background:linear-gradient(135deg,#ffd878 0%,#f3b94c 100%);color:#071b31;font-size:clamp(25px,4.7vw,34px);font-weight:800;box-shadow:0 18px 38px rgba(0,0,0,.24)}.primary span{font-size:.78em;margin-left:15px}
+.inspiration{position:relative;z-index:1;margin-top:51px}.section-heading{display:grid;grid-template-columns:1fr auto 1fr;gap:23px;align-items:center}.section-heading span{height:1px;background:var(--gold);opacity:.9}.section-heading h2{margin:0;color:var(--gold);font-size:clamp(14px,2.7vw,20px);letter-spacing:2.6px;text-align:center;font-weight:800;white-space:nowrap}
+.inspiration-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px}.inspiration-card{min-width:0;min-height:196px;padding:23px 7px 15px;border:1.5px solid var(--blue-line);border-radius:24px;background:rgba(5,31,52,.72);color:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:space-between;transition:transform .16s ease,border-color .16s ease,background .16s ease}.inspiration-card:hover,.inspiration-card:focus-visible{transform:translateY(-2px);border-color:var(--gold);outline:0;background:#082944}.inspiration-card svg{width:67px;height:67px;color:var(--gold);flex:none;margin-top:7px}.inspiration-card span{font-size:clamp(16px,2.9vw,20px);line-height:1.15;text-align:center;min-height:48px;display:grid;place-items:center}
+.landscape{position:relative;z-index:1;margin:35px -43px 0;height:224px}.landscape svg{width:100%;height:100%;display:block}.land-line{fill:none;stroke:rgba(244,189,84,.72);stroke-width:2.2}.route-line{fill:none;stroke:rgba(244,189,84,.75);stroke-width:2;stroke-dasharray:6 8}.sun{fill:none;stroke:rgba(244,189,84,.8);stroke-width:2.2}footer{position:relative;z-index:1;text-align:center;color:#8798ad;font-size:20px;letter-spacing:1px;margin-top:-2px}
+.results{padding:0 22px 70px;background:var(--navy)}.results:empty{display:none}.option,.thinking{background:#0a2843;border:1px solid #214d73;border-radius:24px;padding:22px;margin-top:22px;box-shadow:0 12px 30px var(--shadow)}.option h2,.thinking h2{margin:0 0 12px}.muted{color:var(--muted)}.badge{display:inline-block;background:#f3c45e;color:#061b31;border-radius:999px;padding:7px 11px;font-weight:800;font-size:13px}.break{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.break div{background:#08233b;border-radius:14px;padding:12px}.break b{display:block;margin-bottom:4px}.good{background:#0b3a32;border-radius:14px;padding:13px;margin-top:12px}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.links a{color:#071b31;background:#f4bd54;padding:9px 12px;border-radius:12px;text-decoration:none;font-weight:700}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:640px){
+  /* v2.5 mobile reference pass: preserve the approved visual language, but match the reference proportions. */
+  .hero{padding:32px 16px 10px;min-height:100vh}
+  .brand-mark{width:80px;height:80px;margin-bottom:7px}
+  .brand-mark svg{overflow:visible}
+  h1{font-size:clamp(50px,15.2vw,60px);letter-spacing:-2.8px;line-height:.96}
+  .tagline{margin:17px 0 34px;font-size:21px;line-height:1.1}
+
+  .description-field{min-height:110px;border-radius:16px;padding:17px 20px;gap:16px}
+  .location-icon{width:46px;min-width:46px;height:56px}
+  .location-icon svg{width:43px;height:51px}
+  .description-copy input{font-size:23px;line-height:1.12}
+  .description-copy span{font-size:14px;margin-top:11px;white-space:nowrap}
+
+  .date-row{gap:11px;margin-top:20px}
+  .date-label{display:block;font-size:21px;font-weight:700;color:#f4f5f5;margin:0 0 10px 6px;line-height:1}
+  .date-field{height:84px;border-radius:20px;padding:0 15px;gap:12px;display:flex;align-items:center}
+  .date-field svg{width:29px;height:29px}
+  .date-field input{font-size:16px;line-height:24px}
+
+  .primary{height:98px;border-radius:29px;margin-top:29px;font-size:24px;box-shadow:0 15px 30px rgba(0,0,0,.22)}
+  .primary span{font-size:1em;margin-left:16px;display:inline-block;transform:translateY(-1px)}
+
+  .inspiration{margin-top:50px}
+  .section-heading{gap:13px}
+  .section-heading h2{letter-spacing:1.8px;font-size:13px}
+  .inspiration-grid{gap:8px;margin-top:24px}
+  .inspiration-card{min-height:143px;border-radius:22px;padding:16px 4px 12px;border-width:1.5px}
+  .inspiration-card svg{width:54px;height:54px;margin-top:2px;stroke-width:3.1}
+  .inspiration-card span{font-size:15px;line-height:1.15;min-height:34px}
+
+  .landscape{height:180px;margin:28px -16px 0}
+  footer{font-size:14px;letter-spacing:.8px;margin-top:0}
+}
+
+@media(max-width:430px){
+  .hero{padding-left:16px;padding-right:16px}
+  .description-copy span{font-size:13px}
+  .date-row{gap:10px}
+  .date-field{padding-left:14px;padding-right:10px}
+  .date-field input{font-size:15px}
+  .primary{font-size:23px}
+  .inspiration-card svg{width:52px;height:52px}
+  .inspiration-card span{font-size:14px}
+}
